@@ -1,28 +1,34 @@
 # netinfo
 
-Command-line tool untuk melihat informasi jaringan user (IP publik, lokal, ISP, lokasi, ASN, VPN/proxy, User-Agent).
+netinfo adalah tool command-line untuk menampilkan informasi jaringan user secara cepat dan praktis. Data yang ditampilkan meliputi IP publik, IP lokal, ISP, lokasi (kota/region/negara), ASN, status VPN/proxy, timezone, dan User-Agent.
 
-## Instalasi (Arch Linux)
+## Instalasi
 
+### Melalui AUR (Arch User Repository)
+Jika sudah dipublish ke AUR, cukup jalankan:
+
+    yay -S netinfo
+
+### Manual (build lokal)
 1. Pastikan `python` dan `python-requests` sudah terpasang.
 2. Clone repo ini atau download source.
-3. Jalankan:
+3. Build dan install dengan:
 
     makepkg -si
 
-4. Jalankan tool dengan perintah:
+## Penggunaan
+
+Jalankan perintah berikut di terminal:
 
     netinfo
 
-## Opsi Penggunaan
-
+### Opsi
 - `netinfo` : Output lengkap (default)
 - `netinfo --json` : Output dalam format JSON
 - `netinfo --short` : Output singkat (hanya IP publik & kota)
 - `netinfo --public-only` : Hanya menampilkan IP publik
 
-## Output Contoh
-
+### Contoh Output
 ```
 User Info
 ---------
@@ -36,5 +42,24 @@ VPN/Proxy   : No/Unknown
 User-Agent  : - (not available)
 ```
 
-## Lisensi
-MIT
+### Output JSON
+```
+netinfo --json
+{
+  "public_ip": "103.xxx.xxx.xxx",
+  "local_ip": "192.168.1.10",
+  "isp": "Telkom Indonesia",
+  "location": "Banda Aceh, Indonesia",
+  "city": "Banda Aceh",
+  "region": "Aceh",
+  "country": "ID",
+  "timezone": "Asia/Jakarta",
+  "asn": "AS7713",
+  "vpn_proxy": "No/Unknown",
+  "user_agent": "- (not available)"
+}
+```
+
+## Kontribusi & Lisensi
+Kontribusi dipersilakan! Lihat PKGBUILD dan LICENSE untuk detail.
+Lisensi: MIT
