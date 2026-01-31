@@ -157,3 +157,4 @@ netinfo --json
 ---
 
 Sumber: [AUR netinfo](https://aur.archlinux.org/packages/netinfo) | [GitHub](https://github.com/Bangkah/netinfo)
+
