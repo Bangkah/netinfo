@@ -1,0 +1,21 @@
+# Build output
+*.pkg.tar.zst
+pkg/
+src/
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+*~
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Snapshots / backups
+*.pacsave
+*.pacnew
+
+# System files
+.DS_Store

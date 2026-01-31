@@ -1,0 +1,3 @@
+netinfo 1.0.0-1
+================
+- Initial release: command-line tool untuk melihat informasi jaringan user (IP publik, lokal, ISP, lokasi, ASN, VPN/proxy, User-Agent)
