@@ -1,0 +1,13 @@
+pkgbase = netinfo
+	pkgdesc = Command-line tool untuk melihat informasi jaringan user (IP, ISP, lokasi, ASN, dll)
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/atha/netinfo
+	arch = any
+	license = MIT
+	depends = python
+	depends = python-requests
+	source = netinfo.py
+	sha256sums = SKIP
+
+pkgname = netinfo

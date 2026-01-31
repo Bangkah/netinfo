@@ -68,13 +68,16 @@ def main():
     if args.json:
         print(json.dumps(data, indent=2, ensure_ascii=False))
         return
-    if args.short:
+    elif args.short:
+        # Output hanya IP publik dan kota
         print(f"{public_ip} | {city}")
         return
-    if args.public_only:
+    elif args.public_only:
+        # Output hanya IP publik
         print(public_ip)
         return
 
+    # Output default lengkap
     print("User Info\n---------")
     print(f"Public IP   : {public_ip}")
     print(f"Local IP    : {local_ip}")
