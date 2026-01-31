@@ -1,4 +1,4 @@
-# Maintainer: atha <your-email@example.com>
+# Maintainer: atha mdhyaulatha@gmailicom
 
 pkgname=netinfo
 pkgver=1.0.0

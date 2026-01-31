@@ -1,21 +1,47 @@
+
 # Build output
-*.pkg.tar.zst
+*.pkg.tar*
+*.tar
+*.tar.*
 pkg/
 src/
+build/
 
 # Temporary files
 *.swp
 *.swo
 *.bak
+*.tmp
 *~
 
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
 
 # Snapshots / backups
 *.pacsave
 *.pacnew
+*.pacorig
 
 # System files
 .DS_Store
+.idea/
+.vscode/
+
+# makepkg output
+*.sig
+*.part
+*.lock
+*.zst
+
+# pacman output
+*.pacnew
+*.pacsave
+*.pacorig
+
+# Git
+.git/
+
+# Jangan upload file lain yang tidak perlu
+#.SRCINFO
