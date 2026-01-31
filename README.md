@@ -152,7 +152,7 @@ netinfo --json
 
 **Maintainer:**
 
-- Bangkah <your-email@example.com>
+- Bangkah mdhyaulatha@gmail.com
 
 ---
 
