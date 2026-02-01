@@ -7,14 +7,15 @@
 
 ---
 
+
 ## Fitur Utama
 
 - Menampilkan IP publik & lokal
-- Deteksi ISP, ASN, region, negara
-- Deteksi timezone
-- Status VPN/proxy (jika tersedia)
-- Output JSON untuk scripting/otomasi
-- Output singkat (hanya IP & kota)
+- Deteksi ASN dan organisasi/ISP
+- Reverse DNS lookup
+- Estimasi tipe jaringan (Mobile/Fiber/DSL/Wireless/ISP)
+- Info sistem: OS, kernel, arsitektur, hostname, terminal, shell
+- Deteksi VPN/proxy (jika tersedia)
 
 ---
 
@@ -25,64 +26,41 @@
 yay -S netinfo
 ```
 
-### Manual (build lokal)
-```sh
-git clone https://github.com/Bangkah/netinfo.git
-cd netinfo
-makepkg -si
-```
-
----
-
-## Penggunaan
-
-```sh
-netinfo [opsi]
-```
 
 ### Opsi
 
-| Opsi              | Keterangan                                 |
-|-------------------|---------------------------------------------|
-| (tanpa opsi)      | Output lengkap (default)                    |
-| --json            | Output dalam format JSON                    |
-| --short           | Output singkat (hanya IP publik & region)   |
-| --public-only     | Hanya menampilkan IP publik                 |
-| --anon            | Output anonim: hanya kota & negara, tanpa IP publik      |
-| --safe-demo       | Output demo: IP publik diganti contoh, aman dibagikan    |
+| Opsi           | Keterangan                      |
+|----------------|----------------------------------|
+| (tanpa opsi)   | Output lengkap (default)         |
 
 ### Contoh Penggunaan
 - Output lengkap: `netinfo`
-- Output JSON: `netinfo --json`
-- Output singkat: `netinfo --short`
-- Hanya IP publik: `netinfo --public-only`
-- Mode anonim: `netinfo --anon`
-- Mode demo aman: `netinfo --safe-demo`
-
-### Contoh Output Mode Demo Aman
-```
-User Network Info
------------------
-Public IP   : 103.xxx.xxx.xxx
-Local IP    : 192.168.1.10
-ISP         : Telkom Indonesia
-ASN         : AS7713
-Country     : ID
-Continent   : Asia
-Region      : Aceh
-Accuracy    : Medium (IP-based estimation)
-Timezone    : Asia/Jakarta
-VPN/Proxy   : VPN: No/Unknown, Proxy: No/Unknown, Tor: No/Unknown (checked via IP)
-OS          : Linux 6.18.6-zen1-1-zen
-Terminal    : xterm-256color
-User-Agent  : - (not available)
-Ping        : 25.0 ms
-```
 
 ### Contoh Output
 ```
 User Network Info
 -----------------
+Public IP    : 114.122.39.111
+Local IP     : 192.168.8.191
+IP Version   : IPv4
+ASN          : AS23693
+Organization : PT. Telekomunikasi Selular
+Reverse DNS  : -
+Network Type : ISP (estimated from ASN)
+
+System Info
+-----------
+OS           : Linux
+Kernel       : 6.18.6-zen1-1-zen
+Architecture : x86_64
+Hostname     : atha-ANV16-71-79NR
+Terminal     : xterm-256color
+Shell        : /usr/bin/zsh
+
+Privacy
+-------
+VPN / Proxy  : No / Unknown
+```
 Public IP   : 114.122.39.111
 Local IP    : 192.168.8.191
 ISP         : PT. Telekomunikasi Selular
@@ -99,27 +77,7 @@ User-Agent  : - (not available)
 Ping        : 56.26 ms
 ```
 
-### Output JSON
-```
-netinfo --json
-{
-  "public_ip": "114.122.39.111",
-  "local_ip": "192.168.8.191",
-  "isp": "PT. Telekomunikasi Selular",
-  "asn": "AS23693",
-  "region": "North Sumatra",
-  "country": "ID",
-  "continent": "Asia",
-  "geo_source": "ipinfo.io",
-  "accuracy": "Medium (IP-based estimation)",
-  "timezone": "Asia/Jakarta",
-  "vpn_proxy": "VPN: No/Unknown, Proxy: No/Unknown, Tor: No/Unknown (checked via IP)",
-  "os": "Linux 6.18.6-zen1-1-zen",
-  "terminal_type": "xterm-256color",
-  "user_agent": "- (not available)",
-  "latency_ms": 56.26
-}
-```
+
 
 ---
 
