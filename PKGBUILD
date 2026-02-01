@@ -1,4 +1,4 @@
-# Maintainer: atha mdhyaulatha@gmailicom
+# Maintainer: atha mdhyaulatha@gmail.com
 
 pkgname=netinfo
 pkgver=1.0.0
