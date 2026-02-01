@@ -34,6 +34,7 @@ def main():
     parser.add_argument('--public-only', action='store_true', help='Hanya tampilkan IP publik')
     parser.add_argument('--anon', action='store_true', help='Output anonim: hanya kota & negara, tanpa IP')
     parser.add_argument('--safe-demo', action='store_true', help='Output demo: IP publik diganti contoh, aman dibagikan')
+    parser.add_argument('-v', '--version', action='store_true', help='Tampilkan versi netinfo')
     args = parser.parse_args()
 
     local_ip = get_local_ip()
@@ -68,12 +69,15 @@ def main():
     }
 
 
+    if args.version:
+        print("netinfo 1.1.0 (cli) (built: Feb 1 2026)")
+        print("Copyright (c) Bangkah, 2024-2026")
+        print("Netinfo Engine v1.1.0, Copyright (c) Bangkah Technologies")
+        return
     if args.anon:
-        # Output anonim: hanya kota & negara
         print(f"Kota: {city}\nNegara: {country}")
         return
     elif args.safe_demo:
-        # Output demo aman: IP publik diganti contoh
         demo_ip = "103.xxx.xxx.xxx"
         print("User Info\n---------")
         print(f"Public IP   : {demo_ip}")
