@@ -10,7 +10,7 @@
 ## Fitur Utama
 
 - Menampilkan IP publik & lokal
-- Deteksi ISP, ASN, lokasi (kota, region, negara)
+- Deteksi ISP, ASN, region, negara
 - Deteksi timezone
 - Status VPN/proxy (jika tersedia)
 - Output JSON untuk scripting/otomasi
@@ -46,7 +46,7 @@ netinfo [opsi]
 |-------------------|---------------------------------------------|
 | (tanpa opsi)      | Output lengkap (default)                    |
 | --json            | Output dalam format JSON                    |
-| --short           | Output singkat (hanya IP publik & kota)     |
+| --short           | Output singkat (hanya IP publik & region)   |
 | --public-only     | Hanya menampilkan IP publik                 |
 | --anon            | Output anonim: hanya kota & negara, tanpa IP publik      |
 | --safe-demo       | Output demo: IP publik diganti contoh, aman dibagikan    |
@@ -59,55 +59,65 @@ netinfo [opsi]
 - Mode anonim: `netinfo --anon`
 - Mode demo aman: `netinfo --safe-demo`
 
-### Contoh Output Mode Anonim
-```
-Kota: Banda Aceh
-Negara: Indonesia
-```
-
 ### Contoh Output Mode Demo Aman
 ```
-User Info
----------
+User Network Info
+-----------------
 Public IP   : 103.xxx.xxx.xxx
 Local IP    : 192.168.1.10
 ISP         : Telkom Indonesia
-Location    : Banda Aceh, Indonesia
-Timezone    : Asia/Jakarta
 ASN         : AS7713
-VPN/Proxy   : No/Unknown
+Country     : ID
+Continent   : Asia
+Region      : Aceh
+Accuracy    : Medium (IP-based estimation)
+Timezone    : Asia/Jakarta
+VPN/Proxy   : VPN: No/Unknown, Proxy: No/Unknown, Tor: No/Unknown (checked via IP)
+OS          : Linux 6.18.6-zen1-1-zen
+Terminal    : xterm-256color
 User-Agent  : - (not available)
+Ping        : 25.0 ms
 ```
 
 ### Contoh Output
 ```
-User Info
----------
-Public IP   : 103.xxx.xxx.xxx
-Local IP    : 192.168.1.10
-ISP         : Telkom Indonesia
-Location    : Banda Aceh, Indonesia
+User Network Info
+-----------------
+Public IP   : 114.122.39.111
+Local IP    : 192.168.8.191
+ISP         : PT. Telekomunikasi Selular
+ASN         : AS23693
+Country     : ID
+Continent   : Asia
+Region      : North Sumatra
+Accuracy    : Medium (IP-based estimation)
 Timezone    : Asia/Jakarta
-ASN         : AS7713
-VPN/Proxy   : No/Unknown
+VPN/Proxy   : VPN: No/Unknown, Proxy: No/Unknown, Tor: No/Unknown (checked via IP)
+OS          : Linux 6.18.6-zen1-1-zen
+Terminal    : xterm-256color
 User-Agent  : - (not available)
+Ping        : 56.26 ms
 ```
 
 ### Output JSON
 ```
 netinfo --json
 {
-  "public_ip": "103.xxx.xxx.xxx",
-  "local_ip": "192.168.1.10",
-  "isp": "Telkom Indonesia",
-  "location": "Banda Aceh, Indonesia",
-  "city": "Banda Aceh",
-  "region": "Aceh",
+  "public_ip": "114.122.39.111",
+  "local_ip": "192.168.8.191",
+  "isp": "PT. Telekomunikasi Selular",
+  "asn": "AS23693",
+  "region": "North Sumatra",
   "country": "ID",
+  "continent": "Asia",
+  "geo_source": "ipinfo.io",
+  "accuracy": "Medium (IP-based estimation)",
   "timezone": "Asia/Jakarta",
-  "asn": "AS7713",
-  "vpn_proxy": "No/Unknown",
-  "user_agent": "- (not available)"
+  "vpn_proxy": "VPN: No/Unknown, Proxy: No/Unknown, Tor: No/Unknown (checked via IP)",
+  "os": "Linux 6.18.6-zen1-1-zen",
+  "terminal_type": "xterm-256color",
+  "user_agent": "- (not available)",
+  "latency_ms": 56.26
 }
 ```
 
