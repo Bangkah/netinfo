@@ -48,6 +48,36 @@ netinfo [opsi]
 | --json            | Output dalam format JSON                    |
 | --short           | Output singkat (hanya IP publik & kota)     |
 | --public-only     | Hanya menampilkan IP publik                 |
+| --anon            | Output anonim: hanya kota & negara, tanpa IP publik      |
+| --safe-demo       | Output demo: IP publik diganti contoh, aman dibagikan    |
+
+### Contoh Penggunaan
+- Output lengkap: `netinfo`
+- Output JSON: `netinfo --json`
+- Output singkat: `netinfo --short`
+- Hanya IP publik: `netinfo --public-only`
+- Mode anonim: `netinfo --anon`
+- Mode demo aman: `netinfo --safe-demo`
+
+### Contoh Output Mode Anonim
+```
+Kota: Banda Aceh
+Negara: Indonesia
+```
+
+### Contoh Output Mode Demo Aman
+```
+User Info
+---------
+Public IP   : 103.xxx.xxx.xxx
+Local IP    : 192.168.1.10
+ISP         : Telkom Indonesia
+Location    : Banda Aceh, Indonesia
+Timezone    : Asia/Jakarta
+ASN         : AS7713
+VPN/Proxy   : No/Unknown
+User-Agent  : - (not available)
+```
 
 ### Contoh Output
 ```

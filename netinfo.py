@@ -32,6 +32,8 @@ def main():
     parser.add_argument('--json', action='store_true', help='Output dalam format JSON')
     parser.add_argument('--short', action='store_true', help='Output singkat: IP publik & kota')
     parser.add_argument('--public-only', action='store_true', help='Hanya tampilkan IP publik')
+    parser.add_argument('--anon', action='store_true', help='Output anonim: hanya kota & negara, tanpa IP')
+    parser.add_argument('--safe-demo', action='store_true', help='Output demo: IP publik diganti contoh, aman dibagikan')
     args = parser.parse_args()
 
     local_ip = get_local_ip()
@@ -65,15 +67,31 @@ def main():
         "user_agent": user_agent
     }
 
-    if args.json:
+
+    if args.anon:
+        # Output anonim: hanya kota & negara
+        print(f"Kota: {city}\nNegara: {country}")
+        return
+    elif args.safe_demo:
+        # Output demo aman: IP publik diganti contoh
+        demo_ip = "103.xxx.xxx.xxx"
+        print("User Info\n---------")
+        print(f"Public IP   : {demo_ip}")
+        print(f"Local IP    : {local_ip}")
+        print(f"ISP         : {org}")
+        print(f"Location    : {loc}")
+        print(f"Timezone    : {timezone}")
+        print(f"ASN         : {asn}")
+        print(f"VPN/Proxy   : {vpn_status}")
+        print(f"User-Agent  : {user_agent}")
+        return
+    elif args.json:
         print(json.dumps(data, indent=2, ensure_ascii=False))
         return
     elif args.short:
-        # Output hanya IP publik dan kota
         print(f"{public_ip} | {city}")
         return
     elif args.public_only:
-        # Output hanya IP publik
         print(public_ip)
         return
 
