@@ -1,7 +1,7 @@
 # Maintainer: atha mdhyaulatha@gmail.com
 
 pkgname=netinfo
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 pkgdesc="Command-line tool untuk melihat informasi jaringan user (IP, ISP, lokasi, ASN, dll)"
 arch=('any')
