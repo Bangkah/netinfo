@@ -1,42 +1,49 @@
+
 # netinfo
 
 ![AUR version](https://img.shields.io/aur/version/netinfo?style=flat-square)
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**netinfo** adalah utilitas command-line sederhana dan cepat untuk menampilkan informasi jaringan user secara detail. Cocok untuk troubleshooting, audit, scripting, atau sekadar mengetahui status koneksi Anda.
+**netinfo** is a fast, minimal, and reliable command-line utility to display your network and system information. Designed for troubleshooting, auditing, scripting, or simply checking your connection status, netinfo only shows verifiable and essential data.
 
 ---
 
+## Features
 
-## Fitur Utama
-
-- Menampilkan IP publik & lokal
-- Deteksi ASN dan organisasi/ISP
+- Show public and local IP addresses
+- Detect ASN and organization/ISP
 - Reverse DNS lookup
-- Estimasi tipe jaringan (Mobile/Fiber/DSL/Wireless/ISP)
-- Info sistem: OS, kernel, arsitektur, hostname, terminal, shell
-- Deteksi VPN/proxy (jika tersedia)
+- Estimate network type (Mobile/Fiber/DSL/Wireless/ISP)
+- Display system info: OS, kernel, architecture, hostname, terminal, shell
+- Detect VPN/proxy status (if available)
 
 ---
 
-## Instalasi
+## Installation
 
-### Melalui AUR (Arch User Repository)
+### From AUR (Arch User Repository)
 ```sh
 yay -S netinfo
 ```
 
+### Manual (local build)
+```sh
+git clone https://github.com/Bangkah/netinfo.git
+cd netinfo
+makepkg -si
+```
 
-### Opsi
+---
 
-| Opsi           | Keterangan                      |
-|----------------|----------------------------------|
-| (tanpa opsi)   | Output lengkap (default)         |
+## Usage
 
-### Contoh Penggunaan
-- Output lengkap: `netinfo`
+```sh
+netinfo
+```
 
-### Contoh Output
+No options are required. The tool always outputs a full, structured report.
+
+### Example Output
 ```
 User Network Info
 -----------------
@@ -61,33 +68,16 @@ Privacy
 -------
 VPN / Proxy  : No / Unknown
 ```
-Public IP   : 114.122.39.111
-Local IP    : 192.168.8.191
-ISP         : PT. Telekomunikasi Selular
-ASN         : AS23693
-Country     : ID
-Continent   : Asia
-Region      : North Sumatra
-Accuracy    : Medium (IP-based estimation)
-Timezone    : Asia/Jakarta
-VPN/Proxy   : VPN: No/Unknown, Proxy: No/Unknown, Tor: No/Unknown (checked via IP)
-OS          : Linux 6.18.6-zen1-1-zen
-Terminal    : xterm-256color
-User-Agent  : - (not available)
-Ping        : 56.26 ms
-```
-
-
 
 ---
 
-## Kontribusi
+## Contributing
 
-Pull request, issue, dan saran sangat dipersilakan! Pastikan perubahan Anda jelas dan teruji. Lihat PKGBUILD dan LICENSE untuk detail.
+Pull requests, issues, and suggestions are welcome! Please ensure your changes are clear and well-tested. See PKGBUILD and LICENSE for details.
 
-## Lisensi
+## License
 
-MIT. Lihat file LICENSE untuk detail.
+MIT. See LICENSE file for details.
 
 ---
 
@@ -97,5 +87,5 @@ MIT. Lihat file LICENSE untuk detail.
 
 ---
 
-Sumber: [AUR netinfo](https://aur.archlinux.org/packages/netinfo) | [GitHub](https://github.com/Bangkah/netinfo)
+Links: [AUR netinfo](https://aur.archlinux.org/packages/netinfo) | [GitHub](https://github.com/Bangkah/netinfo)
 
