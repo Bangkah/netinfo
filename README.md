@@ -47,7 +47,7 @@ No options are required. The tool always outputs a full, structured report.
 ```
 User Network Info
 -----------------
-Public IP    : 114.122.39.111
+Public IP    : 114.122.19.115
 Local IP     : 192.168.8.191
 IP Version   : IPv4
 ASN          : AS23693
